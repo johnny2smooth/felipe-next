@@ -1,10 +1,10 @@
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
-function Resources() {
+function About() {
   return (
     <Layout>
       <div className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-6xl font-bold">Resources</h1>
+        <h1 className="text-6xl font-bold">About a boy</h1>
         <p className="text-2xl font-bold">I am a psychologist and a writer.</p>
         <p className="text-2xl font-bold">I am a psychologist and a writer.</p>
       </div>
@@ -12,4 +12,4 @@ function Resources() {
   );
 }
 
-export default Resources;
+export default About;
