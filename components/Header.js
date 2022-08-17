@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="flex space-between px-6 py-4 items-baseline">
+    <header className="flex space-between items-baseline px-6 py-4">
       <div className="flex grow items-baseline">
         <h1 className={` text-6xl font-bold hover:underline`}>
           <Link href="/">
@@ -14,7 +14,7 @@ export default function Header() {
 
       <nav>
         <ul
-          className={`flex text-2xl font-thin [&>*:hover]:underline underline-offset-4 [&>*]:px-6`}
+          className={`flex flex-wrap text-2xl font-thin [&>*:hover]:underline underline-offset-4 [&>*]:px-6`}
         >
           <li>
             <Link href="/practice">
