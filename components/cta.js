@@ -12,9 +12,10 @@ function Cta() {
         className="z-0 absolute"
       />
       <h2
-        className={`text-6xl text-center z-1 absolute text-[#4969ED] max-w-lg`}
+        className={`text-7xl font-bold text-center z-1 absolute text-[#4969ED] max-w-[800px] leading-normal
+        `}
       >
-        Something to make you feel safe
+        Something to make you feel safe here.
       </h2>
     </div>
   );
