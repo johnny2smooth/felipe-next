@@ -1,43 +1,40 @@
 import Link from 'next/link';
 
-export default function Header() {
+export default function Navbar() {
   return (
-    <header className="flex space-between items-baseline px-6 py-4">
-      <div className="flex grow items-baseline">
-        <h1 className={` text-6xl font-bold hover:underline`}>
+    <div className="flex flex-wrap items-baseline px-6">
+      <div className="flex grow flex-wrap items-baseline py-6">
+        <h1 className="text-6xl font-bold hover:underline">
           <Link href="/">
             <a>Felipe Matamala</a>
           </Link>
         </h1>
         <p>psychoanalyst</p>
       </div>
-
       <nav>
-        <ul
-          className={`flex flex-wrap text-2xl font-thin [&>*:hover]:underline underline-offset-4 [&>*]:px-6`}
-        >
-          <li>
-            <Link href="/practice">
-              <a>Practice</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/resources">
-              <a>Resources</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/writings">
-              <a>Writings</a>
-            </Link>
-          </li>
-          <li>
+        <ul className="flex flex-wrap [&>*]:pr-6 py-6 [&>*:hover]:underline">
+          <li className="">
             <Link href="/about">
               <a>About</a>
             </Link>
           </li>
+          <li className="">
+            <Link href="/practice">
+              <a>Practice</a>
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/resources">
+              <a>Resources</a>
+            </Link>
+          </li>
+          <li className="">
+            <Link href="/writings">
+              <a>Writings</a>
+            </Link>
+          </li>
         </ul>
       </nav>
-    </header>
+    </div>
   );
 }

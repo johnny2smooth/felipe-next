@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Footer from './Footer';
-import Header from './Header';
+import Navbar from './navbar';
 
 function Layout({ children }) {
   return (
@@ -9,7 +9,7 @@ function Layout({ children }) {
         <title>Felipe Matamala</title>
       </Head>
       <div className="min-h-full">
-        <Header />
+        <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
       </div>

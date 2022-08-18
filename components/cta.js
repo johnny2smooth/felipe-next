@@ -12,7 +12,7 @@ function Cta() {
         className="z-0 absolute"
       />
       <h2
-        className={`text-7xl font-bold text-center z-1 absolute text-[#4969ED] max-w-[800px] leading-normal
+        className={`text-[6vh] font-bold text-center z-1 absolute text-[#4969ED] max-w-[800px] leading-normal
         `}
       >
         Something to make you feel safe here.
