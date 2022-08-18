@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Navbar() {
   return (
     <div className="flex flex-wrap items-baseline px-6">
-      <div className="flex grow flex-wrap items-baseline py-6">
+      <div className="flex grow flex-wrap items-baseline pt-6">
         <h1 className="text-6xl font-bold hover:underline">
           <Link href="/">
             <a>Felipe Matamala</a>
