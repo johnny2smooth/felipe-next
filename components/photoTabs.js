@@ -5,9 +5,30 @@ function PhotoTabs() {
   const [tab, setTab] = useState(1);
 
   let data = [
-    { src: '/contact-sticker.png', alt: 'alt', topic: '1', index: 1 },
-    { src: '/contact-sticker.png', alt: 'alt', topic: '2', index: 2 },
-    { src: '/contact-sticker.png', alt: 'alt', topic: '3', index: 3 },
+    {
+      src: '/contact-sticker.png',
+      alt: 'alt',
+      topic: 'A short version',
+      paragraph:
+        'A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
+      index: '1',
+    },
+    {
+      src: '/heart-sticker.png',
+      alt: 'alt',
+      topic: 'A medium version',
+      paragraph:
+        '22222222 A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
+      index: '2',
+    },
+    {
+      src: '/contact-sticker.png',
+      alt: 'alt',
+      topic: 'A longer verion',
+      paragraph:
+        '33333 A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
+      index: '3',
+    },
   ];
 
   const handleTabChange = (e) => {
@@ -16,17 +37,17 @@ function PhotoTabs() {
 
   return (
     <div className="flex flex-col items-center justify-center my-8">
-      <div className="my-8 grid gap-2 grid-cols-3 border-b bg-slate-100 rounded-2xl border-gray-200 p-2">
+      <div className="my-8 grid grid-cols-3 gap-6 border-b bg-slate-100 rounded-2xl border-gray-200 p-2">
         {data.map(({ src, alt, topic, index }) => (
           <div
             key={topic}
-            className={`index text-center flex flex-col  mb-1 border-b border-gray-200 hover:border-red-200`}
+            className={`index text-center flex flex-col border-b border-gray-200 hover:border-red-200`}
           >
             <Image src={src} height={200} width={200} alt={alt} />
             <button
               className={`${
-                tab === index ? 'bg-slate-400 shadow-sm' : ''
-              } inline-block p-4 rounded-t-lg bg-slate-300 hover:bg-slate-400 active:bg-slate-400`}
+                tab === index ? 'bg-slate-400 shadow-lg shadow-slate-600' : ''
+              } inline-block py-4 rounded-t-lg bg-slate-300 hover:bg-slate-400 active:bg-slate-400`}
               onClick={handleTabChange}
               value={index}
             >
@@ -34,12 +55,10 @@ function PhotoTabs() {
             </button>
           </div>
         ))}
-        <p className={`col-span-3`}>
-          {tab === '3'
-            ? '3333333 something so special that it needs a description!'
-            : tab === '2'
-            ? '2222222 something so special that it needs a description!'
-            : '1111111 something so special that it needs a description!'}
+        <p
+          className={`max-w-2xl col-span-3 bg-slate-400 shadow-lg shadow-slate-600 rounded-b-xl px-4 mt-[-30px]`}
+        >
+          {data[tab - 1].paragraph}
         </p>
       </div>
     </div>
