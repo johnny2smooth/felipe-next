@@ -8,7 +8,7 @@ function PhotoTabs() {
     {
       src: '/contact-sticker.png',
       alt: 'alt',
-      topic: 'A short version',
+      topic: 'short',
       paragraph:
         'A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
       index: '1',
@@ -16,7 +16,7 @@ function PhotoTabs() {
     {
       src: '/heart-sticker.png',
       alt: 'alt',
-      topic: 'A medium version',
+      topic: 'medium',
       paragraph:
         '22222222 A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
       index: '2',
@@ -24,7 +24,7 @@ function PhotoTabs() {
     {
       src: '/contact-sticker.png',
       alt: 'alt',
-      topic: 'A longer verion',
+      topic: 'longer',
       paragraph:
         '33333 A short version of the contact sticker 1. A short version of the contact sticker 1. A short version of the contact sticker 1 A short version of the contact sticker 1 A short version of the contact sticker 1 ',
       index: '3',
@@ -35,19 +35,23 @@ function PhotoTabs() {
     setTab(e.target.value);
   };
 
+  console.log(tab);
+
   return (
-    <div className="flex flex-col items-center justify-center my-8">
-      <div className="my-8 grid grid-cols-3 gap-6 border-b bg-slate-100 rounded-2xl border-gray-200 p-2">
-        {data.map(({ src, alt, topic, index }) => (
+    <div className="flex flex-col items-center justify-center my-8 text-slate-100">
+      <div className="my-8 grid grid-cols-3 gap-2 border-b p-4">
+        {data.map(({ src, alt, topic, index = 1 }) => (
           <div
             key={topic}
-            className={`index text-center flex flex-col border-b border-gray-200 hover:border-red-200`}
+            className={`z-1 index text-center flex flex-col border-b border-gray-200 hover:border-red-200`}
           >
             <Image src={src} height={200} width={200} alt={alt} />
             <button
               className={`${
-                tab === index ? 'bg-slate-400 shadow-lg shadow-slate-600' : ''
-              } inline-block py-4 rounded-t-lg bg-slate-300 hover:bg-slate-400 active:bg-slate-400`}
+                tab == index
+                  ? 'bg-slate-800 shadow-lg shadow-slate-600'
+                  : 'bg-slate-600'
+              } inline-block py-4 px-1 rounded-t-lg  hover:bg-slate-800 active:bg-slate-800`}
               onClick={handleTabChange}
               value={index}
             >
@@ -55,11 +59,9 @@ function PhotoTabs() {
             </button>
           </div>
         ))}
-        <p
-          className={`max-w-2xl col-span-3 bg-slate-400 shadow-lg shadow-slate-600 rounded-b-xl px-4 mt-[-30px]`}
-        >
-          {data[tab - 1].paragraph}
-        </p>
+        <div className="col-span-3  bg-slate-800 shadow-lg shadow-slate-600 rounded-b-xl px-4 mt-[-10px]">
+          <p className={`max-w-2xl py-4`}>{data[tab - 1].paragraph}</p>
+        </div>
       </div>
     </div>
   );
