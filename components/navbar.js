@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 export default function Navbar() {
   const router = useRouter();
 
-  console.log(router);
-
   const links = [
     { route: '/about', text: 'About', id: 'about' },
     { route: '/practice', text: 'Practice', id: 'projects' },
@@ -16,7 +14,7 @@ export default function Navbar() {
   return (
     <div className="flex flex-wrap items-baseline px-6">
       <div className="flex grow flex-wrap items-baseline pt-6">
-        <h1 className="text-6xl font-bold hover:underline hover:text-[#4969ED]">
+        <h1 className="text-6xl font-bold hover:underline ">
           <Link href="/">
             <a>Felipe Matamala</a>
           </Link>
@@ -24,7 +22,7 @@ export default function Navbar() {
         <p>psychoanalyst</p>
       </div>
       <nav>
-        <ul className="flex flex-wrap [&>*]:pr-6 py-6 [&>*:hover]:underline text-lg">
+        <ul className="flex flex-wrap [&>*]:pr-6 py-6 [&>*:hover]:underline  text-lg">
           {links.map(({ route, text, id }) => (
             <li key={id}>
               <Link href={route}>
